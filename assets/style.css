@@ -2373,3 +2373,56 @@ footer {
 .hero-ctrl .ic-play { display: none; }
 #heroPlay.paused .ic-pause { display: none; }
 #heroPlay.paused .ic-play { display: inline; }
+
+/* Coming soon ribbon */
+.ribbon {
+    position: fixed;
+    top: 36px;
+    right: -42px;
+    z-index: 1000;
+    background: var(--warn);
+    color: #000;
+    font-family: var(--mono);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.6;
+    padding: 6px 52px;
+    transform: rotate(45deg);
+    pointer-events: none;
+    box-shadow: 0 2px 8px rgba(0,0,0,.18);
+}
+
+@keyframes ribbon-shake {
+    0%   { transform: rotate(45deg) translateX(0); }
+    15%  { transform: rotate(45deg) translateX(-8px); }
+    30%  { transform: rotate(45deg) translateX(8px); }
+    45%  { transform: rotate(45deg) translateX(-6px); }
+    60%  { transform: rotate(45deg) translateX(6px); }
+    75%  { transform: rotate(45deg) translateX(-3px); }
+    90%  { transform: rotate(45deg) translateX(3px); }
+    100% { transform: rotate(45deg) translateX(0); }
+}
+
+.ribbon.shake { animation: ribbon-shake .6s ease; }
+
+.cta-soon {
+    position: relative;
+}
+
+.cta-soon::after {
+    content: 'Coming soon';
+    position: absolute;
+    top: -22px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-family: var(--mono);
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--warn);
+    white-space: nowrap;
+}
