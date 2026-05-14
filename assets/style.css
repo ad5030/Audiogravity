@@ -51,6 +51,7 @@
     :root:not([data-theme="light"]) .pwa-visual,
     :root:not([data-theme="light"]) .terminal,
     :root:not([data-theme="light"]) footer { background: #1a1a1a }
+    :root:not([data-theme="light"]) .fb.dark:hover { background: #222 }
     :root:not([data-theme="light"]) .fb-tier.pro { border-color: #fff; color: #fff }
     :root:not([data-theme="light"]) .pricing-plan.featured { color: #fff }
     :root:not([data-theme="light"]) .pricing-plan.featured .pp-cta { background: #fff; color: #000; border-color: #fff }
@@ -83,6 +84,7 @@
 [data-theme="dark"] .pwa-visual,
 [data-theme="dark"] .terminal,
 [data-theme="dark"] footer { background: #1a1a1a }
+[data-theme="dark"] .fb.dark:hover { background: #222 }
 [data-theme="dark"] .fb-tier.pro { border-color: #fff; color: #fff }
 [data-theme="dark"] .pricing-plan.featured { color: #fff }
 [data-theme="dark"] .pricing-plan.featured .pp-cta { background: #fff; color: #000; border-color: #fff }
