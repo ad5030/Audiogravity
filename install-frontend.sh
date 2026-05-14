@@ -80,7 +80,7 @@ mkdir -p "$INSTALL_DIR"
 trap 'rm -rf "$INSTALL_DIR"' EXIT
 
 info "Downloading $TARBALL..."
-curl -fsSL --progress-bar \
+curl -fL --progress-bar \
     -H "$AUTH_HEADER" -H "Accept: application/octet-stream" \
     "$TARBALL_URL" -o "$INSTALL_DIR/$TARBALL" \
     || fail "Download failed."
