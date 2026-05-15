@@ -1252,7 +1252,7 @@ nav {
 }
 
 .pn rect {
-    fill: #fff;
+    fill: var(--bg);
     stroke: var(--border);
     stroke-width: 1
 }
