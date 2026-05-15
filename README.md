@@ -1,4 +1,4 @@
-# Audiogravity — Landing Page
+# Audiogravity
 
 Public marketing site and token-authenticated install scripts for Audiogravity.
 
