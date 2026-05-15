@@ -4,8 +4,8 @@
 # Downloads release assets from the private GitHub repo via the API.
 #
 # Usage:
-#   curl -fsSL https://audiogravity.di-marco.net/install-frontend.sh | sudo bash -s -- --token ghp_xxx
-#   curl -fsSL https://audiogravity.di-marco.net/install-frontend.sh | sudo bash -s -- --token ghp_xxx --version 1.2.0
+#   curl -fsSL https://audiogravity.app/install-frontend.sh | sudo bash -s -- --token ghp_xxx
+#   curl -fsSL https://audiogravity.app/install-frontend.sh | sudo bash -s -- --token ghp_xxx --version 1.2.0
 
 set -e
 

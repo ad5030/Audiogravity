@@ -2,7 +2,7 @@
 
 Public marketing site and token-authenticated install scripts for Audiogravity.
 
-Live at [audiogravity.di-marco.net](https://audiogravity.di-marco.net) via GitHub Pages.
+Live at [audiogravity.app](https://audiogravity.app) via GitHub Pages.
 
 ## Repository layout
 
@@ -27,16 +27,16 @@ The release binaries are hosted on a private repo (`ad5030/audiogravity-releases
 
 ```bash
 # Backend — latest
-curl -fsSL https://audiogravity.di-marco.net/install-backend.sh | sudo bash -s -- --token ghp_xxx
+curl -fsSL https://audiogravity.app/install-backend.sh | sudo bash -s -- --token ghp_xxx
 
 # Backend — specific version
-curl -fsSL https://audiogravity.di-marco.net/install-backend.sh | sudo bash -s -- --token ghp_xxx --version 1.2.0
+curl -fsSL https://audiogravity.app/install-backend.sh | sudo bash -s -- --token ghp_xxx --version 1.2.0
 
 # Frontend — latest
-curl -fsSL https://audiogravity.di-marco.net/install-frontend.sh | sudo bash -s -- --token ghp_xxx
+curl -fsSL https://audiogravity.app/install-frontend.sh | sudo bash -s -- --token ghp_xxx
 
 # Frontend — specific version
-curl -fsSL https://audiogravity.di-marco.net/install-frontend.sh | sudo bash -s -- --token ghp_xxx --version 1.2.0
+curl -fsSL https://audiogravity.app/install-frontend.sh | sudo bash -s -- --token ghp_xxx --version 1.2.0
 ```
 
 The token is shared during the **early access phase** with approved testers. It requires `Contents: Read` on the private releases repo only.

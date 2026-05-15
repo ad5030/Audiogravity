@@ -4,7 +4,7 @@
  */
 (function () {
     const host = window.location.hostname;
-    if (host !== 'audiogravity.di-marco.net' && host !== 'ad5030.github.io') return;
+    if (host !== 'audiogravity.app' && host !== 'ad5030.github.io') return;
 
     const pixel    = new Image(1, 1);
     const ts       = Date.now();
