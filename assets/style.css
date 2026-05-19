@@ -367,6 +367,16 @@ nav {
     margin-bottom: 48px
 }
 
+/* Mobile : les boutons stackent verticalement, et les ``::after`` labels
+   (Coming soon / Private beta) sont positionnés à top: -22px au-dessus de
+   leur bouton. Sans gap suffisant, le label colle visuellement au bouton
+   précédent. 32px laisse la place au label (~22px) + un peu d'air. */
+@media (max-width: 720px) {
+    .hero-cta {
+        gap: 32px;
+    }
+}
+
 .cta-primary {
     background: var(--inv);
     color: var(--bg);
