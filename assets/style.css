@@ -1426,7 +1426,12 @@ nav {
     font-family: var(--mono);
     font-size: 12px;
     line-height: 1.9;
-    height: 100%
+    height: 100%;
+    /* Allow long monolithic tokens (e.g. /etc/systemd/system/...) to wrap on
+       narrow viewports instead of forcing the container to overflow and drag
+       the neighbouring .rt-list along with it. */
+    overflow-wrap: anywhere;
+    word-break: break-word;
 }
 
 .rt-config .cmt {
@@ -2523,6 +2528,36 @@ footer {
 @media (max-width: 720px) {
     .cmp { font-size: var(--font-size-xs); }
     .cmp th, .cmp td { padding: 10px 12px; }
+
+    /* Sticky first column — keeps the capability label visible while the
+       user horizontally swipes the comparison columns. Without this the
+       table just looks like it's overflowing into nothing. */
+    .cmp th.cmp-cap,
+    .cmp td.cmp-cap {
+        position: sticky;
+        left: 0;
+        z-index: 2;
+        min-width: 160px;
+    }
+
+    /* Visual scroll-hint: gradient fade on the right edge of the scroll
+       container so users know the table continues past the viewport. iOS
+       Safari hides scrollbars by default — without this cue the table just
+       looks broken / clipped. ``pointer-events: none`` so the fade doesn't
+       intercept swipes. */
+    .cmp-scroll {
+        position: relative;
+    }
+    .cmp-scroll::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 40px;
+        background: linear-gradient(to right, transparent, var(--bg) 70%);
+        pointer-events: none;
+    }
 }
 
 /* LAYERS DIAGRAM */
