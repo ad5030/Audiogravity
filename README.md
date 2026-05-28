@@ -2,6 +2,10 @@
 
 **Your streamer is your source. Audiogravity is the conductor.**
 
+<p align="center">
+  <img src="assets/pics/ag-hero.png" alt="Audiogravity" width="800" />
+</p>
+
 A native iOS / Android app (PWA) — and any modern browser — to pilot every audio engine your streamer runs (MPD, Roon Bridge, HQPlayer NAA, AirPlay, UPnP), all the way down to the RT kernel.
 
 → [audiogravity.app](https://audiogravity.app)
