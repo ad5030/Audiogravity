@@ -1,98 +1,119 @@
-# Audiogravity
+<p align="center">
+  <img src="assets/og-image_black.png" alt="Audiogravity" width="600" />
+</p>
 
-**Your streamer is your source. Audiogravity is the conductor.**
+<p align="center">
+  <strong>Your streamer is your source. Audiogravity is the conductor.</strong>
+  <br/>
+  A native iOS / Android app (PWA) to pilot every audio engine your streamer runs —<br/>
+  MPD, Roon Bridge, HQPlayer NAA, AirPlay, UPnP — all the way down to the RT kernel.
+  <br/><br/>
+  <a href="https://audiogravity.app"><strong>audiogravity.app →</strong></a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/version-0.9.0_beta-blue" alt="Version" />
+  <img src="https://img.shields.io/badge/platform-DietPi_x86__64_%7C_aarch64-green" alt="Platform" />
+  <img src="https://img.shields.io/badge/license-proprietary-lightgrey" alt="License" />
+  <img src="https://img.shields.io/badge/tests-154_passing-brightgreen" alt="Tests" />
+</p>
+
+---
+
+## Features
 
 <table>
   <tr>
+    <td width="50%">
+
+**Audio Control**
+- Unified transport across MPD, Roon, HQPlayer NAA, AirPlay and UPnP
+- HQPlayer DSP remote — filter, shaper, output mode, volume with auto-discovery
+- Output steering — USB, Toslink, HDMI
+- One-tap profile scenarios (switch entire audio chains instantly)
+- Bit-perfect lock with DSD volume protection
+- Sleep timer
+
+</td>
+    <td width="50%">
+
+**Library & Radio**
+- High-resolution browsing — Roon, MPD, MinimServer, Qobuz, Tidal
+- Qobuz Hi-Res streaming up to 24-bit / 192 kHz
+- Internet radio — Radio Browser, custom stations, favourites
+- UPnP server auto-discovery & browsing
+
+</td>
+  </tr>
+  <tr>
     <td>
-      A native iOS / Android app (PWA) — and any modern browser — to pilot every audio engine your streamer runs (MPD, Roon Bridge, HQPlayer NAA, AirPlay, UPnP), all the way down to the RT kernel.
-      <br/><br/>
-      <a href="https://audiogravity.app">→ audiogravity.app</a>
-    </td>
-    <td width="300"><img src="assets/pics/ag-hero.png" alt="Audiogravity" width="280" /></td>
+
+**System & Performance**
+- Live signal-path visualisation of your entire Hi-Fi chain
+- RT scheduling, CPU pinning, per-core governor control — via systemd drop-ins
+- µs-scale latency benchmarks from the browser
+- Service monitoring with 60s sparklines
+- Audio device inventory (ALSA cards, USB DACs)
+- Audio software manager — install, update, configure
+
+</td>
+    <td>
+
+**Security & Access**
+- WebAuthn / passkeys login
+- Multi-user with role-based access (admin, user, guest)
+- Push notifications (iOS, Android, desktop)
+- PWA-installable on iOS and Android
+- No cloud account — fully self-hosted
+
+</td>
   </tr>
 </table>
-
-## What it does
-
-Audiogravity orchestrates the audio engines that audiophiles already trust. It does not replace them — it conducts them from one place:
-
-- **Unified transport** across MPD, Roon, HQPlayer NAA, AirPlay and UPnP
-- **HQPlayer DSP remote** — change filter, noise shaper, output mode and volume from the couch, with automatic network discovery
-- **Output steering** — switch between USB, Toslink and HDMI outputs without touching the streamer
-- **Live signal-path visualisation** of your entire Hi-Fi chain
-- **Kernel-level tuning** — RT scheduling, CPU pinning, MEMLOCK — applied via systemd drop-ins (upgrade-safe, reversible)
-- **High-resolution library** browsing across Roon, MPD, MinimServer, upmpdcli, Qobuz and Tidal
-- **Qobuz Hi-Res streaming** — native integration up to 24-bit / 192 kHz
-- **Internet radio** — Radio Browser directory, custom stations, favourites, Hi-Res filtering
-- **Bit-perfect lock** with DSD volume protection
-- **µs-scale latency benchmarks** from the browser
-- **Audio software manager** — install, update and configure audio services from the UI
-- **Sleep timer** — automatic pause after a set duration
-- **WebAuthn / passkeys** login, multi-user with role-based access
-- **PWA-installable** on iOS and Android, accessible from any browser on your network
-
-No cloud account. Self-hosted on your own streamer (DietPi x86_64 or Raspberry Pi aarch64).
 
 ## Editions
 
 | Edition | Price | What it unlocks |
-|---|---|---|
-| **Trial** | Free · 30 days | Full access to every Pro feature, auto-activated on first run |
+|---------|-------|-----------------|
+| **Trial** | Free · 30 days | Full access to every Pro feature |
 | **Starter** | Free · forever | Profiles, Services, Audio Software, System, Users |
-| **Pro** | €49 lifetime · 1 machine | Audio Pipeline, Player, Library, Audio Services Config, Systemd Config, Performance |
+| **Pro** | €49 lifetime · 1 machine | Pipeline, Player, Library, Config, Performance |
 
-Pro is a lifetime license — no subscription, no renewal. Pro holders receive a preferential upgrade price for future major versions.
+Pro is a lifetime license — no subscription, no renewal. See [EDITIONS.md](EDITIONS.md) and [EULA.md](EULA.md).
 
-See [EDITIONS.md](EDITIONS.md) for the full edition breakdown and [EULA.md](EULA.md) for licensing terms.
-
-## Install scripts
-
-The release binaries are hosted on a private repo (`ad5030/audiogravity-releases`). The install scripts here are public and accept a Personal Access Token to authenticate downloads via the GitHub API.
-
-**All-in-one** (backend + frontend on the same host) :
+## Quick install
 
 ```bash
+# All-in-one (backend + frontend)
 curl -fsSL https://audiogravity.app/install.sh | sudo bash -s -- --token ghp_xxx
-```
 
-**Or install each component separately** (e.g. on different hosts):
-
-```bash
-# Backend
+# Or separately
 curl -fsSL https://audiogravity.app/install-backend.sh | sudo bash -s -- --token ghp_xxx
-
-# Frontend
 curl -fsSL https://audiogravity.app/install-frontend.sh | sudo bash -s -- --token ghp_xxx
 ```
 
-The token is shared during the **early access phase** with approved testers. It requires `Contents: Read` on the private releases repo only.
+> The token is shared during **early access** with approved testers. [Request access →](mailto:audiogravity@di-marco.net?subject=Audiogravity%20-%20Early%20access%20request)
 
-To request access: [audiogravity@di-marco.net](mailto:audiogravity@di-marco.net?subject=Audiogravity%20-%20Early%20access%20request)
+## Install as PWA
 
-## Install the PWA on your phone
+<details>
+<summary><strong>iOS (Safari)</strong></summary>
 
-Audiogravity is a Progressive Web App — it installs like a native app from the browser, no app store needed.
+1. Open **Safari** → navigate to your Audiogravity URL
+2. Tap **Share** (square with arrow)
+3. **Add to Home Screen** → **Add**
+4. Open from home screen — runs fullscreen
 
-### iOS (Safari)
+> iOS requires Safari. Chrome/Firefox on iOS cannot install PWAs.
+</details>
 
-1. Open **Safari** and navigate to your Audiogravity URL (e.g. `https://your-streamer.local`)
-2. Tap the **Share** button (square with arrow, bottom bar)
-3. Scroll down and tap **Add to Home Screen**
-4. Tap **Add** — the Audiogravity icon appears on your home screen
-5. Open it from the home screen — it runs fullscreen like a native app
+<details>
+<summary><strong>Android (Chrome)</strong></summary>
 
-> Note: iOS requires Safari. Chrome/Firefox on iOS cannot install PWAs.
-
-### Android (Chrome)
-
-1. Open **Chrome** and navigate to your Audiogravity URL
-2. Tap the **three-dot menu** (top right)
-3. Tap **Add to Home screen** (or **Install app** if prompted)
-4. Tap **Install** — the Audiogravity icon appears on your home screen
-5. Open it from the home screen — it runs fullscreen like a native app
-
-> Tip: If Chrome shows an install banner at the bottom of the page, you can tap it directly.
+1. Open **Chrome** → navigate to your Audiogravity URL
+2. Tap **⋮** menu → **Add to Home screen** or **Install app**
+3. Tap **Install**
+4. Open from home screen — runs fullscreen
+</details>
 
 ## Test report
 
@@ -108,4 +129,6 @@ Last run: 2026-05-28 11:13 UTC
 
 ## Coming soon
 
-Audiogravity is in early access. Public release scheduled for **Summer 2026**. To get notified, request access at the email above.
+Audiogravity is in early access. Public release scheduled for **Summer 2026**.
+
+To get notified: [audiogravity@di-marco.net](mailto:audiogravity@di-marco.net?subject=Audiogravity%20-%20Early%20access%20request)
